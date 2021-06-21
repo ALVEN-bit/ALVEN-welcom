@@ -21,17 +21,17 @@ const listener = app.listen(process.env.PORT, () => {
 
 const Discord = require ("discord.js")
 const moment = require ("moment")
-const DarkMan = new Discord.Client();
-const prefix = "D!";
+const ALVEN = new Discord.Client();
+const prefix = "a!";
 
 
-DarkMan.login("");
-DarkMan.on("ready", async () => {
-  console.log(`Logged in as ${DarkMan.user.username}!`);
-  DarkMan.user.setStatus("ONLINE");
-  DarkMan.user.setActivity(`${prefix}help`, { type: "WATCHING" });
-  DarkMan.guilds.cache.forEach(g => {
-    if (g.member(DarkMan.user).hasPermission("ADMINISTRATOR")) {
+ALVEN.login("");
+ALVEN.on("ready", async () => {
+  console.log(`Logged in as ${ALVEN.user.username}!`);
+  ALVEN.user.setStatus("ONLINE");
+  ALVEN.user.setActivity(`${prefix}help`, { type: "WATCHING" });
+  ALVEN.guilds.cache.forEach(g => {
+    if (g.member(ALVEN.user).hasPermission("ADMINISTRATOR")) {
       g.fetchInvites().then(guildInvites => {});
     }
   });
@@ -39,24 +39,24 @@ DarkMan.on("ready", async () => {
 
 //////////
 
-DarkMan.on("message", message => {
+ALVEN.on("message", message => {
 if (message.content === prefix +"help") {
 const embed = new Discord.MessageEmbed()
 .setColor("BLACK")
-.setAuthor("Prefix [ D! ]","")
+.setAuthor("Prefix [ a! ]","")
 .setDescription(` 
 **
 ・┊welcome [change channel]
 ・┊left [change channel]
 **
 **[ invite ]**
-**[ click here ](https://discord.com/api/oauth2/authorize?client_id=743869029638471802&permissions=8&scope=bot)** 
+**[ click here ](https://discord.com/api/oauth2/authorize?client_id=828308993172045845&permissions=8&scope=bot)** 
 **[ support ]**
-**[ click here ](https://discord.gg/tstcyhgQeS)**
+**[ click here ](https://discord.gg/)**
  `)
     
-    .setFooter(` Remix Bot ✨ | Coded by , DarkMan`, DarkMan.user.avatarURL)
-    .setURL("https://discord.gg/YSx9p3e7F8")
+    .setFooter(` Welcom Bot ✨ | Coded by , ALVEN`, ALVEN.user.avatarURL)
+    .setURL("https://discord.gg/")
       
     message.channel.send(embed);
       message.react("❤️");
@@ -65,17 +65,17 @@ const embed = new Discord.MessageEmbed()
 //////////////
 
 /////////// code welcome
-DarkMan.on("guildMemberAdd", member => {
+ALVEN.on("guildMemberAdd", member => {
   const channel = member.guild.channels.cache.find(
     channel => channel.name === "・┊welcome"
   );
-  let DarkMan = member.user.avatarURL();
+  let ALVEN = member.user.avatarURL();
   if (!channel) return;
   const joinembed = new Discord.MessageEmbed()
     .setTitle(``)
     .setAuthor(`Welcome Bot`, `https://cdn.discordapp.com/avatars/828218881989935105/479953e51dadf4f38c5bc72c912193c5.webp?size=1024`)
     .setColor("RANDOM")
-    .setThumbnail(DarkMan)
+    .setThumbnail(ALVEN)
     .addField(
       "**name** : ",
       `${member}
@@ -103,11 +103,11 @@ DarkMan.on("guildMemberAdd", member => {
   channel.send(joinembed);
 });
 ////////////// code left
-DarkMan.on("guildMemberRemove", member => {
+ALVEN.on("guildMemberRemove", member => {
   const channel = member.guild.channels.cache.find(
     channel => channel.name === "・┊left"
   );
-  let DarkMan = member.user.avatarURL();
+  let ALVEN = member.user.avatarURL();
   if (!channel) return;
   const joinembed = new Discord.MessageEmbed()
     .setTitle(``)
@@ -116,7 +116,7 @@ DarkMan.on("guildMemberRemove", member => {
       "https://thumbs.gfycat.com/ChiefBiodegradableAmericanalligator-size_restricted.gif"
     )
     .setColor("RANDOM")
-    .setThumbnail(DarkMan)
+    .setThumbnail(ALVEN)
     .addField("**name :**", `${member}`)
     .addField("Bye Bye", `!`)
     .addField("👋;(",   "bye bye")
@@ -129,7 +129,7 @@ DarkMan.on("guildMemberRemove", member => {
   channel.send(joinembed);
 });
 /////////////// code embed
-DarkMan.on("guildMemberAdd", member => {
+ALVEN.on("guildMemberAdd", member => {
   const joinembed = new Discord.MessageEmbed()
 
     .setColor("RANDOM")
