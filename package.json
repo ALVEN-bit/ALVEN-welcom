@@ -1,10 +1,10 @@
 {
-  "name": "DarkMan",
+  "name": "ALVEN",
   "version": "0.0.1",
-  "description": "Hyper staff",
-  "main": "DarkMan.js",
+  "description": "black hat staff",
+  "main": "alven.js",
   "scripts": {
-    "start": "node DarkMan.js"
+    "start": "node alven.js"
   },
   "dependencies": {
     "express": "^4.17.1",
